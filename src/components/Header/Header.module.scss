@@ -5,6 +5,11 @@
     background-size: 50%;
     overflow: hidden;
 
+    @media (max-width: 900px) {
+        overflow: unset;
+        padding-bottom: 40px;
+    }
+
     &::after {
         content: "";
         position: fixed;
@@ -23,6 +28,17 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    padding: 15px;
+
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        padding: 15px;
+
+        .search {
+            right: auto;
+        }
+    }
 }
 
 .logo {
@@ -36,6 +52,11 @@
 .menu {
     display: flex;
     gap: 100px;
+
+    @media (max-width: 1300px) {
+        display: none;
+    }
+
     a {
         color: #ffff;
         text-decoration: none;
@@ -85,10 +106,31 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+
+
+        .next {
+            width: 220px;
+            height: 52px;
+        }
+
+
+        .inner {
+            flex-direction: row;
+            right: auto;
+        }
+
+
+
+    }
 }
 
 .title {
-    font-size: 200px;
+    // font-size: 200px;
+    font-size: clamp(3.125rem, -0.495rem + 14.85vw, 12.5rem);
     color: transparent;
     -webkit-text-stroke: 5px #fff;
     text-stroke: 5px #fff;
@@ -175,19 +217,23 @@
         bottom: -150px;
         cursor: pointer;
 
+        @media (max-width: 700px) {
+            bottom: -180px;
+        }
         transition: 0.5s;
 
         &:hover {
             background-color: #fff;
             color: #ca0000;
         }
+
     }
 }
 
 .after_card {
     display: flex;
     width: max-content;
-    background: linear-gradient(180deg, #990000 0%, #CA0000 49.5%, #990000 100%);
+    background: linear-gradient(180deg, #990000 0%, #ca0000 49.5%, #990000 100%);
 
     margin-top: 52px;
     margin-left: 52px;
@@ -196,6 +242,12 @@
     position: relative;
     top: -120px;
     z-index: 5;
+
+
+
+    @media (max-width: 700px) {
+        top: -80px;
+    }
 
     p {
         color: #fff;
